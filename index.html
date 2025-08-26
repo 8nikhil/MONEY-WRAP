@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONEYWARP - Professional Investment Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="root">
+        <div class="dashboard">
+            <!-- Header Section -->
+            <header class="dashboard-header">
+                <div class="logo-container">
+                    <h1 class="logo-3d">MONEYWARP</h1>
+                    <p class="tagline">Professional Investment Dashboard</p>
+                </div>
+                <nav class="nav-links">
+                    <a href="#portfolio" class="nav-link active">Portfolio</a>
+                    <a href="#indian-markets" class="nav-link">Indian Markets</a>
+                    <a href="#global-markets" class="nav-link">Global Markets</a>
+                    <a href="#pre-market" class="nav-link">Pre-Market</a>
+                    <a href="#stocks" class="nav-link">Stocks</a>
+                    <a href="#news" class="nav-link">News</a>
+                </nav>
+            </header>
+
+            <!-- Portfolio Summary Section -->
+            <section class="portfolio-summary" id="portfolio">
+                <h2 class="section-title">Portfolio Summary</h2>
+                <div class="summary-grid">
+                    <!-- Total Investment Card -->
+                    <div class="professional-card clickable-card" id="investment-card">
+                        <div class="professional-card-content">
+                            <div class="data-metric">
+                                <div class="data-metric-label">
+                                    <i class="fas fa-chart-line"></i> Total Investment
+                                </div>
+                                <div class="data-metric-value">₹5,75,000</div>
+                                <div class="data-metric-change positive">+₹25,000 (4.55%)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Profit Card -->
+                    <div class="professional-card clickable-card" id="profit-card">
+                        <div class="professional-card-content">
+                            <div class="data-metric">
+                                <div class="data-metric-label">
+                                    <i class="fas fa-chart-pie"></i> Total Profit
+                                </div>
+                                <div class="data-metric-value positive">₹1,23,500</div>
+                                <div class="data-metric-change positive">+₹8,750 (7.63%)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Value Card -->
+                    <div class="professional-card">
+                        <div class="professional-card-content">
+                            <div class="data-metric">
+                                <div class="data-metric-label">
+                                    <i class="fas fa-wallet"></i> Portfolio Value
+                                </div>
+                                <div class="data-metric-value">₹6,98,500</div>
+                                <div class="data-metric-change positive">+₹15,250 (2.23%)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day P&L Card -->
+                    <div class="professional-card">
+                        <div class="professional-card-content">
+                            <div class="data-metric">
+                                <div class="data-metric-label">
+                                    <i class="fas fa-calendar-day"></i> Day P&L
+                                </div>
+                                <div class="data-metric-value positive">₹4,250</div>
+                                <div class="data-metric-change positive">+0.61%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Holdings Card -->
+                    <div class="professional-card">
+                        <div class="professional-card-content">
+                            <div class="data-metric">
+                                <div class="data-metric-label">
+                                    <i class="fas fa-building"></i> Holdings
+                                </div>
+                                <div class="data-metric-value">24</div>
+                                <div class="data-metric-change neutral">Companies</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Overall Returns Card -->
+                    <div class="professional-card">
+                        <div class="professional-card-content">
+                            <div class="data-metric">
+                                <div class="data-metric-label">
+                                    <i class="fas fa-percentage"></i> Overall Returns
+                                </div>
+                                <div class="data-metric-value positive">21.48%</div>
+                                <div class="data-metric-change positive">+1.25% YTD</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="quick-stats">
+                    <h3 class="subsection-title">Quick Stats</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">Best Performer</span>
+                            <span class="stat-value positive">RELIANCE (+12.5%)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Allocation Type</span>
+                            <span class="stat-value">Equity Heavy (85%)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Risk Level</span>
+                            <span class="stat-value">Moderate</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Avg Holding Period</span>
+                            <span class="stat-value">18 months</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Broker Selection Section -->
+            <section class="broker-selection" id="brokers">
+                <h2 class="section-title">Broker Platforms</h2>
+                <div class="broker-grid">
+                    <!-- Zerodha -->
+                    <div class="professional-card broker-card" data-broker="zerodha">
+                        <div class="professional-card-content">
+                            <div class="broker-header">
+                                <div class="broker-logo">🟢</div>
+                                <div class="broker-info">
+                                    <h3 class="broker-name">Zerodha</h3>
+                                    <p class="broker-description">India's largest discount broker</p>
+                                </div>
+                            </div>
+                            <div class="connection-status">
+                                <div class="status-indicator connected"></div>
+                                <span>Connected</span>
+                            </div>
+                            <div class="broker-features">
+                                <span class="feature-tag">Zero Brokerage</span>
+                                <span class="feature-tag">Advanced Charts</span>
+                                <span class="feature-tag">API Access</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Angel One -->
+                    <div class="professional-card broker-card" data-broker="angelone">
+                        <div class="professional-card-content">
+                            <div class="broker-header">
+                                <div class="broker-logo">👼</div>
+                                <div class="broker-info">
+                                    <h3 class="broker-name">Angel One</h3>
+                                    <p class="broker-description">Smart investment platform</p>
+                                </div>
+                            </div>
+                            <div class="connection-status">
+                                <div class="status-indicator disconnected"></div>
+                                <span>Disconnected</span>
+                            </div>
+                            <div class="broker-features">
+                                <span class="feature-tag">Smart Orders</span>
+                                <span class="feature-tag">Research</span>
+                                <span class="feature-tag">Mobile App</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upstox -->
+                    <div class="professional-card broker-card" data-broker="upstox">
+                        <div class="professional-card-content">
+                            <div class="broker-header">
+                                <div class="broker-logo">⬆️</div>
+                                <div class="broker-info">
+                                    <h3 class="broker-name">Upstox</h3>
+                                    <p class="broker-description">Technology-driven brokerage</p>
+                                </div>
+                            </div>
+                            <div class="connection-status">
+                                <div class="status-indicator connected"></div>
+                                <span>Connected</span>
+                            </div>
+                            <div class="broker-features">
+                                <span class="feature-tag">Low Cost</span>
+                                <span class="feature-tag">Pro Platform</span>
+                                <span class="feature-tag">Options</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Groww -->
+                    <div class="professional-card broker-card" data-broker="groww">
+                        <div class="professional-card-content">
+                            <div class="broker-header">
+                                <div class="broker-logo">🌱</div>
+                                <div class="broker-info">
+                                    <h3 class="broker-name">Groww</h3>
+                                    <p class="broker-description">Simple investing platform</p>
+                                </div>
+                            </div>
+                            <div class="connection-status">
+                                <div class="status-indicator disconnected"></div>
+                                <span>Disconnected</span>
+                            </div>
+                            <div class="broker-features">
+                                <span class="feature-tag">User Friendly</span>
+                                <span class="feature-tag">Mutual Funds</span>
+                                <span class="feature-tag">SIP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Indian Markets Section -->
+            <section class="indian-markets" id="indian-markets">
+                <h2 class="section-title">Indian Markets</h2>
+                
+                <div class="market-indices">
+                    <h3 class="subsection-title">Market Indices</h3>
+                    <div class="indices-grid">
+                        <div class="professional-card index-card">
+                            <div class="professional-card-content">
+                                <div class="index-header">
+                                    <div class="index-name">NIFTY 50</div>
+                                    <div class="index-change positive">+1.25%</div>
+                                </div>
+                                <div class="index-value">19,875.30</div>
+                            </div>
+                        </div>
+                        
+                        <div class="professional-card index-card">
+                            <div class="professional-card-content">
+                                <div class="index-header">
+                                    <div class="index-name">SENSEX</div>
+                                    <div class="index-change positive">+1.18%</div>
+                                </div>
+                                <div class="index-value">66,527.67</div>
+                            </div>
+                        </div>
+                        
+                        <div class="professional-card index-card">
+                            <div class="professional-card-content">
+                                <div class="index-header">
+                                    <div class="index-name">BANK NIFTY</div>
+                                    <div class="index-change negative">-0.85%</div>
+                                </div>
+                                <div class="index-value">43,246.15</div>
+                            </div>
+                        </div>
+                        
+                        <div class="professional-card index-card">
+                            <div class="professional-card-content">
+                                <div class="index-header">
+                                    <div class="index-name">NIFTY IT</div>
+                                    <div class="index-change positive">+2.15%</div>
+                                </div>
+                                <div class="index-value">32,145.80</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="top-performers">
+                    <h3 class="subsection-title">Top Performing Stocks</h3>
+                    <div class="stocks-grid">
+                        <div class="professional-card stock-detailed-card">
+                            <div class="professional-card-content">
+                                <div class="stock-card-header">
+                                    <div class="stock-info">
+                                        <h4>RELIANCE</h4>
+                                        <p>Reliance Industries Ltd.</p>
+                                        <span class="stock-exchange">NSE</span>
+                                    </div>
+                                    <div class="stock-price">
+                                        <div class="ltp">₹2,847.50</div>
+                                        <div class="price-change positive">+₹126.30 (+4.64%)</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="stock-details-grid">
+                                    <div class="detail-item">
+                                        <div class="detail-label">Open</div>
+                                        <div class="detail-value">₹2,751.25</div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <div class="detail-label">High</div>
+                                        <div class="detail-value">₹2,865.00</div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <div class="detail-label">Low</div>
+                                        <div class="detail-value">₹2,738.50</div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <div class="detail-label">Volume</div>
+                                        <div class="detail-value">2.5M</div>
+                                    </div>
+                                </div>
+                                
+                                <button class="view-details-btn">
+                                    <i class="fas fa-chart-line"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="professional-card stock-detailed-card">
+                            <div class="professional-card-content">
+                                <div class="stock-card-header">
+                                    <div class="stock-info">
+                                        <h4>TCS</h4>
+                                        <p>Tata Consultancy Services</p>
+                                        <span class="stock-exchange">NSE</span>
+                                    </div>
+                                    <div class="stock-price">
+                                        <div class="ltp">₹3,658.25</div>
+                                        <div class="price-change positive">+₹87.50 (+2.45%)</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="stock-details-grid">
+                                    <div class="detail-item">
+                                        <div class="detail-label">Open</div>
+                                        <div class="detail-value">₹3,580.00</div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <div class="detail-label">High</div>
+                                        <div class="detail-value">₹3,672.50</div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <div class="detail-label">Low</div>
+                                        <div class="detail-value">₹3,570.75</div>
+                                    </div>
+                                    <div class="detail-item">
+                                        <div class="detail-label">Volume</div>
+                                        <div class="detail-value">1.8M</div>
+                                    </div>
+                                </div>
+                                
+                                <button class="view-details-btn">
+                                    <i class="fas fa-chart-line"></i> View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News Section -->
+            <section class="market-news" id="news">
+                <h2 class="section-title">Market News</h2>
+                <div class="news-grid">
+                    <div class="professional-card news-card">
+                        <div class="professional-card-content">
+                            <div class="news-header">
+                                <div class="news-emoji">📈</div>
+                                <div class="category-badge">Market</div>
+                            </div>
+                            <div class="news-content">
+                                <h4 class="news-title">Sensex hits new record high as IT stocks surge</h4>
+                                <p class="news-summary">Indian benchmark indices reached fresh peaks driven by strong performance in IT and pharma sectors...</p>
+                            </div>
+                            <div class="news-meta">
+                                <span>2 hours ago</span>
+                                <span class="read-more-btn">Read more</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="professional-card news-card">
+                        <div class="professional-card-content">
+                            <div class="news-header">
+                                <div class="news-emoji">💼</div>
+                                <div class="category-badge">Corporate</div>
+                            </div>
+                            <div class="news-content">
+                                <h4 class="news-title">Reliance announces Q3 results, beats estimates</h4>
+                                <p class="news-summary">Reliance Industries reported strong quarterly earnings with revenue growth across all segments...</p>
+                            </div>
+                            <div class="news-meta">
+                                <span>4 hours ago</span>
+                                <span class="read-more-btn">Read more</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="professional-card news-card">
+                        <div class="professional-card-content">
+                            <div class="news-header">
+                                <div class="news-emoji">🏦</div>
+                                <div class="category-badge">Banking</div>
+                            </div>
+                            <div class="news-content">
+                                <h4 class="news-title">RBI maintains repo rate at 6.5%</h4>
+                                <p class="news-summary">Reserve Bank of India keeps key interest rates unchanged in the latest monetary policy meeting...</p>
+                            </div>
+                            <div class="news-meta">
+                                <span>1 day ago</span>
+                                <span class="read-more-btn">Read more</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Investment Breakdown Modal -->
+    <div class="modal-overlay" id="investment-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Investment Breakdown</h3>
+                <button class="modal-close" id="close-investment-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="investment-summary">
+                    <div class="professional-grid cols-3">
+                        <div class="professional-card">
+                            <div class="professional-card-content">
+                                <div class="data-metric">
+                                    <div class="data-metric-label">Total Invested</div>
+                                    <div class="data-metric-value">₹5,75,000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="professional-card">
+                            <div class="professional-card-content">
+                                <div class="data-metric">
+                                    <div class="data-metric-label">Current Value</div>
+                                    <div class="data-metric-value positive">₹6,98,500</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="professional-card">
+                            <div class="professional-card-content">
+                                <div class="data-metric">
+                                    <div class="data-metric-label">Total Gain</div>
+                                    <div class="data-metric-value positive">₹1,23,500 (21.48%)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="investment-details">
+                    <h4 class="subsection-title">Investment by Company</h4>
+                    <table class="professional-table">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Invested</th>
+                                <th>Current Value</th>
+                                <th>Quantity</th>
+                                <th>Avg Price</th>
+                                <th>Duration</th>
+                                <th>P&L %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="stock-info">
+                                        <div class="stock-symbol">RELIANCE</div>
+                                        <div class="stock-name">Reliance Industries</div>
+                                    </div>
+                                </td>
+                                <td>₹1,25,000</td>
+                                <td>₹1,58,750</td>
+                                <td>50</td>
+                                <td>₹2,500</td>
+                                <td>14 months</td>
+                                <td class="positive">+27.0%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="stock-info">
+                                        <div class="stock-symbol">TCS</div>
+                                        <div class="stock-name">Tata Consultancy Services</div>
+                                    </div>
+                                </td>
+                                <td>₹1,00,000</td>
+                                <td>₹1,15,250</td>
+                                <td>30</td>
+                                <td>₹3,333</td>
+                                <td>18 months</td>
+                                <td class="positive">+15.25%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="stock-info">
+                                        <div class="stock-symbol">HDFC BANK</div>
+                                        <div class="stock-name">HDFC Bank Limited</div>
+                                    </div>
+                                </td>
+                                <td>₹85,000</td>
+                                <td>₹92,500</td>
+                                <td>60</td>
+                                <td>₹1,417</td>
+                                <td>22 months</td>
+                                <td class="positive">+8.82%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profit Breakdown Modal -->
+    <div class="modal-overlay" id="profit-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Profit Breakdown</h3>
+                <button class="modal-close" id="close-profit-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="profit-summary">
+                    <div class="professional-grid cols-4">
+                        <div class="professional-card">
+                            <div class="professional-card-content">
+                                <div class="data-metric">
+                                    <div class="data-metric-label">Total Profit</div>
+                                    <div class="data-metric-value positive">₹1,23,500</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="professional-card">
+                            <div class="professional-card-content">
+                                <div class="data-metric">
+                                    <div class="data-metric-label">Realized Profit</div>
+                                    <div class="data-metric-value positive">₹45,000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="professional-card">
+                            <div class="professional-card-content">
+                                <div class="data-metric">
+                                    <div class="data-metric-label">Unrealized Profit</div>
+                                    <div class="data-metric-value positive">₹78,500</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="professional-card">
+                            <div class="professional-card-content">
+                                <div class="data-metric">
+                                    <div class="data-metric-label">Today's P&L</div>
+                                    <div class="data-metric-value positive">₹4,250</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profit-details">
+                    <h4 class="subsection-title">Profit Analysis by Stock</h4>
+                    <table class="professional-table">
+                        <thead>
+                            <tr>
+                                <th>Stock</th>
+                                <th>Total P&L</th>
+                                <th>Realized</th>
+                                <th>Unrealized</th>
+                                <th>Day Change</th>
+                                <th>Holding Period</th>
+                                <th>Annual Return</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="stock-info">
+                                        <div class="stock-symbol">RELIANCE</div>
+                                        <div class="stock-name">Reliance Industries</div>
+                                    </div>
+                                </td>
+                                <td class="positive">+₹33,750</td>
+                                <td>₹12,000</td>
+                                <td class="positive">₹21,750</td>
+                                <td class="positive">+₹1,850</td>
+                                <td>14 months</td>
+                                <td class="positive">23.14%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="stock-info">
+                                        <div class="stock-symbol">TCS</div>
+                                        <div class="stock-name">Tata Consultancy Services</div>
+                                    </div>
+                                </td>
+                                <td class="positive">+₹15,250</td>
+                                <td>₹8,000</td>
+                                <td class="positive">₹7,250</td>
+                                <td class="positive">+₹950</td>
+                                <td>18 months</td>
+                                <td class="positive">10.17%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
